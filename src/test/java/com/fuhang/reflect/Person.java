@@ -1,6 +1,14 @@
 package com.fuhang.reflect;
 
 public class Person {
+
+    public Person() {
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
     private String name;
 
     public String getName() {
