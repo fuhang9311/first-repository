@@ -16,4 +16,9 @@
         <result column="avatar" property="avatar" />
     </resultMap>
 
+    <select id="getUserById" parameterType="long" resultMap="BaseResultMap">
+        select * from user where id = #{id}
+    </select>
+
+
 </mapper>

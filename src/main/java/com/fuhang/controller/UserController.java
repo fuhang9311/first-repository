@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * <p>
  * 用户基本信息表 前端控制器
@@ -31,6 +33,13 @@ public class UserController {
     @RequestMapping("/getUser")
     public @ResponseBody User getUser() {
         User user = userService.getById("1");
+        return user;
+    }
+
+    @RequestMapping("/getUserById")
+    public @ResponseBody User getUserById(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        User user = userService.getUserById(Long.parseLong(id));
         return user;
     }
 
